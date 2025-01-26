@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace FracturedHause
 {
-    internal class Program
+    public class Game
     {
-        static void Main(string[] args)
+        public void StartGame()
         {
-            Game game = new Game();
-            game.StartGame();
+
         }
     }
 }
