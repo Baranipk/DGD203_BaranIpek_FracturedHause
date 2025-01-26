@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FracturedHause", "FracturedHause\FracturedHause.csproj", "{6CD5A0B1-5DE4-41E8-A5D2-7CCF22A3DA76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CD5A0B1-5DE4-41E8-A5D2-7CCF22A3DA76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD5A0B1-5DE4-41E8-A5D2-7CCF22A3DA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD5A0B1-5DE4-41E8-A5D2-7CCF22A3DA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD5A0B1-5DE4-41E8-A5D2-7CCF22A3DA76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A82D6B84-855A-41DA-8B12-B42A25984992}
+	EndGlobalSection
+EndGlobal
