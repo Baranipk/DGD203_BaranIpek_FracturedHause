@@ -10,19 +10,21 @@ namespace FracturedHause
     {
         static void Main(string[] args)
         {
-            string Credits = "Credits:\r\nPROGRAMİNG BARAN İPEK\r\nİnventory programing helped by gpt4o\r\nNarrative Baranİpek";
-            string BaşlangıçYazısı = "Başlangıç Yazısı";
+            string Credits = "Programming Baran İPEK\r\nInventory System helped by gpt4o\r\nNarrative Design Baranİpek";
+            
                 
             void ProgramLoop()
             {
-
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("FracturedHause");
+                Console.ForegroundColor = ConsoleColor.White;
                 while (true)
                 {
-                    Console.WriteLine(BaşlangıçYazısı);
-                    Console.WriteLine("seçenekler :");
-                    Console.WriteLine("1 oyunubaşlat");
-                    Console.WriteLine("2 credits");
-                    Console.WriteLine("3 oyunukapat");
+                    Console.WriteLine("--------------------");
+                    Console.WriteLine("1 Play");
+                    Console.WriteLine("2 Credits");
+                    Console.WriteLine("3 Close");
+                    Console.WriteLine("Give inputs with numbers on the left");
                     string a =Console.ReadLine();
                     if(a == "1")
                     {
@@ -35,12 +37,12 @@ namespace FracturedHause
                     }
                     else if (a == "3")
                     {
-                        Console.WriteLine("Oyundan çıkılıyor....");
+                        Console.WriteLine("Exiting the game.........");
                         break;
                     }
                     else
                     {
-                        Console.WriteLine("Yanlış Girdiniz");
+                        Console.WriteLine("Wrong Input");
                     }
                 }
             }

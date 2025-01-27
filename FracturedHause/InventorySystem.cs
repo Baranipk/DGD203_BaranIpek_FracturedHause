@@ -13,14 +13,14 @@ namespace FracturedHause
 
         public void AddItem(Item newItem)
         {
-            if (items.Exists(item => item.ID == newItem.ID)) // ChatGpt Yardım Aldım
+            if (items.Exists(item => item.ID == newItem.ID)) // Chatgpt
             {
-                Console.WriteLine($"Hata: {newItem.Name} Adında bir item zaten mevcut! Eklenemedi.");
+                Console.WriteLine($"Error: {newItem.Name} An item with the same name already exists! Could not be added.");
             }
             else
             {
                 items.Add(newItem);
-                Console.WriteLine($"{newItem.Name} başarıyla envantere eklendi.");
+                Console.WriteLine($"{newItem.Name} Successfully added to inventory.");
             }
         }
 
@@ -28,36 +28,38 @@ namespace FracturedHause
         {
             while (true)
             {
-                Console.WriteLine("\n--- ENVANTER ---");
+                Console.WriteLine("\n--- Inventory ---");
                 for (int i = 0; i < items.Count; i++)
                 {
                     Console.WriteLine($"{i + 1}. {items[i].Name}");
                 }
-                Console.WriteLine("0. Çıkış");
+                Console.WriteLine("0. Exit");
                 Console.WriteLine(hypen);
-                Console.Write("\nBir seçenek seçin: ");
+                Console.Write("\nSelect an option: ");
                 string input = Console.ReadLine();
 
-                if (int.TryParse(input, out int choice)) // ChatGpt Yardım Aldım
+                if (int.TryParse(input, out int choice)) // ChatGpt
                 {
                     if (choice == 0)
                     {
-                        Console.WriteLine("Envanterden çıkılıyor...");
+                        Console.WriteLine("Exiting inventory...");
                         break;
                     }
                     else if (choice > 0 && choice <= items.Count)
                     {
-                        Console.WriteLine($"\nSeçilen item: {items[choice - 1].Name}");
-                        Console.WriteLine($"Açıklama: \n {items[choice - 1].Description}");
+                        Console.WriteLine($"\nSelected item: {items[choice - 1].Name}");
+                        Console.WriteLine(hypen);
+                        Console.WriteLine($"Description: \n {items[choice - 1].Description}");
+                        Console.WriteLine(hypen);
                     }
                     else
                     {
-                        Console.WriteLine("Geçersiz seçim! Lütfen geçerli bir numara girin.");
+                        Console.WriteLine("Invalid selection! Please enter a valid number.");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Lütfen bir sayı girin!");
+                    Console.WriteLine("Please enter a number!");
                 }
             }
         }

@@ -32,7 +32,7 @@ namespace FracturedHause
             {          
                 if (!isGameEnd)
                 {
-                    Console.WriteLine("Eve Girilsinmi? \n 1. Yes \n 2. No");
+                    Console.WriteLine("Enter the Hause? \n 1. Yes \n 2. No");
                     input = Console.ReadLine();
                 }
                 if (input.ToLower().Trim() == "1" && isGameEnd == false)
@@ -45,12 +45,12 @@ namespace FracturedHause
                 }
                 else if (input.ToLower().Trim() == "2" || isGameEnd)
                 {
-                    Console.WriteLine("Evden Çıkılıyor");
+                    Console.WriteLine("Exiting the Hause");
                     return;
                 }
                 else
                 {
-                    Console.WriteLine("Hatalı Giriş!");
+                    Console.WriteLine("Wrong Input!");
                 }
             }
         }
@@ -59,12 +59,12 @@ namespace FracturedHause
         #region GetName
         static string GetUserName()
         {
-            Console.Write("Lütfen isminizi girin: ");
+            Console.Write("Your Name: ");
             string name = Console.ReadLine();
           
             while (string.IsNullOrWhiteSpace(name)) // chat gpt
             {
-                Console.Write("İsim boş olamaz, lütfen geçerli bir isim girin: ");
+                Console.Write("The name cannot be empty, please enter a valid name.");
                 name = Console.ReadLine();
             }
 
@@ -77,22 +77,22 @@ namespace FracturedHause
         {
             while (true)
             {
-                Console.WriteLine("Hole Girildi");
+                Console.WriteLine("Entered the hall");
                 Console.WriteLine(hypen);
-                Console.WriteLine("Seçenekler");
-                Console.WriteLine("1.mutfak");
-                Console.WriteLine("2.Bedroom");
-                Console.WriteLine("3.banyo");
+                Console.WriteLine("Rooms");
+                Console.WriteLine("1. Kitchen");
+                Console.WriteLine("2. Bathroom");
+                Console.WriteLine("3. Bedroom");
                 if (isBasmentUnlocked)
                 {
-                    Console.WriteLine("4.bodrum");
+                    Console.WriteLine("4. Basement");
                 }
                 else
                 {
-                    Console.WriteLine("4.bodrum (isLocked)");
+                    Console.WriteLine("4. Basement (Locked)");
                 }
-                Console.WriteLine("5.Inventory");
-                Console.WriteLine("6.oyundançık");
+                Console.WriteLine("5. Inventory");
+                Console.WriteLine("6. Exit the game.");
                 Console.WriteLine(hypen);
                 string input = Console.ReadLine();
 
@@ -102,11 +102,11 @@ namespace FracturedHause
                 }
                 else if (input.ToLower().Trim() == "2")
                 {
-                    Bedroom();
+                    Bathroom();
                 }
                 else if (input.ToLower().Trim() == "3")
                 {
-                    Bathroom();
+                    Bedroom();
                 }
                 else if (input.ToLower().Trim() == "4")
                 {
@@ -120,7 +120,7 @@ namespace FracturedHause
                     }
                     else
                     {
-                        Console.WriteLine("Bodrum (Kilitli)");
+                        Console.WriteLine("Locked...");
                         Console.WriteLine(hypen);
                     }
                 }
@@ -130,12 +130,13 @@ namespace FracturedHause
                 }
                 else if (input.ToLower().Trim() == "6")
                 {
-                    Console.WriteLine("Evden Çıktınız Oyun Bitti");
+                    Console.WriteLine("Game Over");
+                    isGameEnd = true;
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Yanlış Giriş Yaptınız");
+                    Console.WriteLine("Wrong Input!");
                 }
             }
         }
@@ -145,16 +146,16 @@ namespace FracturedHause
         private void Kitchen()
         {
             Console.WriteLine("When you enter the kitchen, you are faced with a long island counter and a stove. On the stove, there is a large pot, and there are chairs with peeling upholstery and a table split in half. You begin to look around to understand what has happened inside. The window looks out to the back side of the house. The first thing you notice in the kitchen are the burned animal parts in the coal shed. It’s as if someone burned animals to make charcoal, cutting off their oxygen supply and storing them there. You then move towards the counter, where you find a note and a vase. The vase has scratched surfaces, and its carvings have fallen off. You move towards the stove, where there is a large pot. The inside of the pot is covered with a slimy and sticky substance, as if something has been pressed onto it. You take a piece of wood and check inside the pot, finding what seems to be organs, body parts of animals, and human teeth. Your stomach churns, and you feel as if you might vomit. You turn towards the window, where you see something resembling a silhouette in the distance, but it disappears quickly. You tense up, your heart rate increases, and you continue looking around. The floorboards creak, but there’s nothing else in the kitchen.");
-            Console.WriteLine(" Mutfağa Grildi");
+            Console.WriteLine("Entered the kitchen");
             Console.WriteLine(hypen);
             while (true)
             {
-                Console.WriteLine("Seçenekler");
-                Console.WriteLine("1 Note");
-                Console.WriteLine("2 The pot");
-                Console.WriteLine("3 Coal shed");
-                Console.WriteLine("4 Inventory");
-                Console.WriteLine("5 höle Geri Dön");
+                Console.WriteLine("Selections :");
+                Console.WriteLine("1. Note");
+                Console.WriteLine("2. The pot");
+                Console.WriteLine("3. Coal shed");
+                Console.WriteLine("4. Inventory");
+                Console.WriteLine("5. Back");
                 Console.WriteLine(hypen);
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out int choice))
@@ -180,31 +181,31 @@ namespace FracturedHause
                     }
                     else if (choice == 5)
                     {
-                        Console.WriteLine("Hole Geri Dönülüyor...");
+                        Console.WriteLine("Back to the Hall...");
                         break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Lütfen bir sayı girin!");
+                    Console.WriteLine("Wrong Input!");
                 }
             }
         }
 
         private void Bedroom()
         {
-            Console.WriteLine(" yatak odası Grildi");
+            Console.WriteLine("Entered the bedroom");
             Console.WriteLine(hypen);
             Console.WriteLine("When you enter the bedroom, you are faced with a large bed surrounded by a drawn circle and a star. There are bloodstains on the bed, candles, a large vase, a key, and a painting on the mirror. In the painting, there are four young girls, one man, and a demon behind the man. The demon’s horns are long and twisted, its legs resemble those of a satyr, with a goat-like appearance. Its upper body is bear-like, covered in thick fur, and its large hands are claw-shaped, but its face resembles a human’s. The bed is completely empty, with the springs exposed, and it reeks of urine. As you look around, you find a key. On the key, it says \"Basement,\" and the end of the key is shaped like a satanic circle. You don’t find anything else in the room.");
             Console.WriteLine(hypen);
             while (true)
             {
-                Console.WriteLine("Seçenekler");
-                Console.WriteLine("1 Key");
-                Console.WriteLine("2 Vase");
-                Console.WriteLine("3 Painting");
-                Console.WriteLine("4 Inventory");
-                Console.WriteLine("5 Back");
+                Console.WriteLine("Selections :");
+                Console.WriteLine("1. Key");
+                Console.WriteLine("2. Vase");
+                Console.WriteLine("3. Painting");
+                Console.WriteLine("4. Inventory");
+                Console.WriteLine("5. Back");
                 Console.WriteLine(hypen);
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out int choice))
@@ -231,13 +232,13 @@ namespace FracturedHause
                     }
                     else if (choice == 5)
                     {
-                        Console.WriteLine("Hole Geri Dönülüyor...");
+                        Console.WriteLine("Back to the Hall...");
                         break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Lütfen bir sayı girin!");
+                    Console.WriteLine("Wrong Input!");
                 }
             }
         }
@@ -250,12 +251,12 @@ namespace FracturedHause
             Console.WriteLine(hypen);
             while (true)
             {
-                Console.WriteLine("Seçenekler");
-                Console.WriteLine("1 Note");
-                Console.WriteLine("2 Items on the floor");
-                Console.WriteLine("3 Bathtub");
-                Console.WriteLine("4 Inventory");
-                Console.WriteLine("5 Back");
+                Console.WriteLine("Selections :");
+                Console.WriteLine("1. Note");
+                Console.WriteLine("2. Items on the floor");
+                Console.WriteLine("3. Bathtub");
+                Console.WriteLine("4. Inventory");
+                Console.WriteLine("5. Back");
                 Console.WriteLine(hypen);
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out int choice))
@@ -281,13 +282,13 @@ namespace FracturedHause
                     }
                     else if (choice == 5)
                     {
-                        Console.WriteLine("Hole Geri Dönülüyor...");
+                        Console.WriteLine("Back to the Hall...");
                         break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Lütfen bir sayı girin!");
+                    Console.WriteLine("Wrong Input!");
                 }
             }
         }
@@ -296,7 +297,7 @@ namespace FracturedHause
         {
             Console.WriteLine("You slowly insert the key into the basement door, and the door opens with a tremble. You face a staircase that stretches downwards, its end not visible. The same sensation from before returns as you begin walking down. As you descend, strange feelings form within you, and you witness images from the notes you’ve read, the visuals in the room, and some images appearing in your mind. For a moment, a sense of peace fills you, and you feel you are in the right place. You continue down slowly. As you descend, your hands, face, and body shiver, your skin prickles, and gradually, you start to take on the form of a demon. Your memory begins to return, and you remember that you are Kagir, the son of Baphomet. Your hair stands on end, and after spending nearly 32 years in human form, you realize you have returned to your home. You recall that the upper part of the house was a trap designed to capture humans. You notice a door below and enter. Your family greets you. You sit at the dinner table and enjoy eating a human. You go to your room, lie down, and your eyes slowly close. You realize that the family, your wife, and children there were just like a dream, and you fall into sleep.");
             Console.WriteLine(hypen);
-            Console.WriteLine("Oyunun Sonuna Ulaştınız");
+            Console.WriteLine("Over...");
             isGameEnd = true;
         }
 
