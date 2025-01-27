@@ -8,6 +8,7 @@ namespace FracturedHause
 {
     public class InventorySystem
     {
+        string hypen = "-----------------------------------------------------------------------------------------------------------------------";
         List<Item> items = new List<Item>();
 
         public void AddItem(Item newItem)
@@ -33,7 +34,7 @@ namespace FracturedHause
                     Console.WriteLine($"{i + 1}. {items[i].Name}");
                 }
                 Console.WriteLine("0. Çıkış");
-
+                Console.WriteLine(hypen);
                 Console.Write("\nBir seçenek seçin: ");
                 string input = Console.ReadLine();
 
@@ -47,7 +48,7 @@ namespace FracturedHause
                     else if (choice > 0 && choice <= items.Count)
                     {
                         Console.WriteLine($"\nSeçilen item: {items[choice - 1].Name}");
-                        Console.WriteLine($"Açıklama: {items[choice - 1].Description}");
+                        Console.WriteLine($"Açıklama: \n {items[choice - 1].Description}");
                     }
                     else
                     {
