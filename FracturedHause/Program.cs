@@ -10,7 +10,7 @@ namespace FracturedHause
     {
         static void Main(string[] args)
         {
-            string Credits = "Credits";
+            string Credits = "Credits:\r\nPROGRAMİNG BARAN İPEK\r\nİnventory programing helped by gpt4o\r\nNarrative Baranİpek";
             string BaşlangıçYazısı = "Başlangıç Yazısı";
                 
             void ProgramLoop()
